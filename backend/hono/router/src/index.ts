@@ -1,7 +1,7 @@
 import { serve } from '@hono/node-server'
 import { Hono } from 'hono'
 
-type Status = 'active' | 'inactive'
+type Status = 'active' | 'inactive' | 'pending'
 
 interface Product {
   id: number
@@ -9,12 +9,14 @@ interface Product {
   price: number
   quantity: number
   status: Status
+  description?: string
 }
 
 const products: Product[] = [
   { id: 1, name: 'Product 1', price: 100, quantity: 10, status: 'active' },
   { id: 2, name: 'Product 2', price: 200, quantity: 20, status: 'inactive' },
   { id: 3, name: 'Product 3', price: 300, quantity: 30, status: 'active' },
+  { id: 4, name: 'Product 4', price: 400, quantity: 40, status: 'pending', description: 'Minecraft Pickaxe' }
 ]
 
 const app = new Hono()
