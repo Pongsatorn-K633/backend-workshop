@@ -26,6 +26,7 @@ app.get('/', (c) => {
     <form action="/sum" method="post" enctype="multipart/form-data">
       <input type="number" name="a" id="a2" placeholder="a" />
       <input type="number" name="b" id="b2" placeholder="b" />
+      <input type="file" name="image">
       <button type="submit">Submit</button>
     </form>
 
